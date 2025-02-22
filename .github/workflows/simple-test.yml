@@ -1,0 +1,22 @@
+# .github/workflows/simple-test.yml
+
+name: Simple Test
+
+on:
+  push:
+    branches:
+      - main  # Runs on push to the main branch
+  pull_request:
+    branches:
+      - main  # Runs on pull requests to the main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Run on the latest Ubuntu environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checkout the code to the runner
+
+      - name: Run simple test
+        run: echo "This is a simple test."  # A basic command to test the workflow
