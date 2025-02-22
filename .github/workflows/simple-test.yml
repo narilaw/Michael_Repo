@@ -17,8 +17,6 @@ jobs:
     runs-on: ubuntu-latest  # Run on the latest Ubuntu environment
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2  # Make sure to checkout your repository
 
       - name: Run simple test
         run: echo "This is a simple test."  # A basic command to test the workflow
