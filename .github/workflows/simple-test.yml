@@ -6,16 +6,19 @@ on:
   push:
     branches:
       - main  # Runs on push to the main branch
-      - branch1
+      - branch1  # Also runs on push to branch1
   pull_request:
     branches:
-      - main  # Runs on pull requests to the main branch
-      - branch1
+      - main  # Runs when creating a PR targeting the main branch
+      - branch1  # Runs when creating a PR targeting the branch1
 
 jobs:
   test:
     runs-on: ubuntu-latest  # Run on the latest Ubuntu environment
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Make sure to checkout your repository
+
       - name: Run simple test
         run: echo "This is a simple test."  # A basic command to test the workflow
